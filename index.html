@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags for character set and viewport -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title of the page -->
+        <title>JavaScript Calculator</title>
+        <!-- Link to Bootstrap CSS file -->
+        <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
+        <!-- Link to custom stylesheet -->
+        <link rel="stylesheet" href="./style.css">
+        <!-- Script tag for the JavaScript file with defer attribute -->
+        <script src="./script.js" defer></script>
+        <!-- Script tag for Bootstrap JavaScript file with defer attribute -->
+        <script src="./Bootstrap//js/bootstrap.bundle.min.js" defer></script>
+    </head>
+    <body>
+        <!-- Header section with the title of the calculator -->
+        <header class="container text-center">
+            <h1 class="m-5 display-3 fw-bold">JavaScript Calculator</h1>
+        </header>
+        <!-- Main content section -->
+        <main>
+            <div class="container pt-5">
+                <div class="row">
+                    <!-- Input field for the first number -->
+                    <div class="col-md-4">
+                        <label class="my-2 fs-3 fw-bold" for="num1">Number -
+                            1</label>
+                        <input
+                            type="number"
+                            id="num1"
+                            class="form-control my-2 fs-3 px-4"
+                            placeholder="Enter number 1">
+                    </div>
+                    <!-- Dropdown for selecting operator -->
+                    <div class="col-md-4 position-relative ">
+                        <label class="my-2 fs-3 fw-bold"
+                            for="operator">Operator</label>
+                        <div class="selectBox" onclick="showCheckboxes()">
+                            <select id="operator"
+                                class="form-select mt-2 fs-3 px-4">
+                                <option>Select Operator</option>
+                            </select>
+                            <!-- Invisible div for positioning checkboxes -->
+                            <div
+                                class="position-absolute top-0 start-0 bottom-0  end-0 "></div>
+                        </div>
+                        <!-- Checkboxes for selecting operator -->
+                        <div id="checkboxes"
+                            class="fs-3 bg-success-subtle position-absolute px-2 py-1 d-none border border-primary rounded-3">
+                            <input
+                                type="checkbox"
+                                id="one"
+                                value="+"
+                                onchange="updateSelect(this)">
+                            <label for="one">+</label>
+                            <input
+                                type="checkbox"
+                                id="two"
+                                value="-"
+                                onchange="updateSelect(this)">
+                            <label for="two">-</label>
+                            <input
+                                type="checkbox"
+                                id="three"
+                                value="*"
+                                onchange="updateSelect(this)">
+                            <label for="three">*</label>
+                            <input
+                                type="checkbox"
+                                id="four"
+                                value="/"
+                                onchange="updateSelect(this)">
+                            <label for="four">/</label>
+                        </div>
+                    </div>
+                    <!-- Input field for the second number -->
+                    <div class="col-md-4">
+                        <label class="my-2 fs-3 fw-bold" for="num2">Number -
+                            2</label>
+                        <input
+                            type="number"
+                            id="num2"
+                            class="form-control my-2 fs-3 px-4"
+                            placeholder="Enter number 2">
+                    </div>
+                </div>
+                <!-- Button to calculate -->
+                <div class="row my-4">
+                    <div class="col-md-12">
+                        <button id="submit"
+                            class="btn btn-primary btn-block w-100 my-2 fs-1 px-4">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <!-- Result display section -->
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <label class="my-2 fs-3 fw-bold" for="result">Answer
+                            :-</label>
+                        <input
+                            type="text"
+                            id="result"
+                            class="form-control my-2 fs-1 px-4 fw-bold bg-dark bg-opacity-25"
+                            placeholder="Result"
+                            readonly>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
